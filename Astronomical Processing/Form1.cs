@@ -181,6 +181,122 @@ namespace Astronomical_Processing
             display();     
         }
         // Populate button to add the random integers in the array to the list 
+         
+        private void Average()
+        {
+            int count = 0;
+            int total= 0;
+            double avg;
+
+            try
+            {
+                foreach (int i in hoursArray)
+                {
+                    total += hoursArray[i];
+                    count++;
+                }
+                avg = total / count;
+                avg.ToString("0.##");
+                Console.WriteLine($"The Average is: {avg}");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show($"Could not calculate \n Exception: {e}");
+                throw;
+            }                  
+        }
+        private void Range()
+        {
+            int range;
+            int high = hoursArray.Max();
+            int low = hoursArray.Min();
+
+            try
+            {
+                range = high - low;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Please populate array\n Exception: {e}");
+                throw;
+            }      
+        }
         
+        private void Mode()
+        {
+            int element;
+            int frequency = 1;
+            int mode = 0;
+            int counter;
+            for (int i = 0; i < hoursArray.Length; i++)
+            {
+                counter = 0;
+                element = hoursArray[i];
+                for (int j = 0; j < hoursArray.Length; j++)
+                {
+                    if (element == hoursArray[j])
+                    {
+                        counter++;
+                    }
+                }
+                if (counter >= frequency)
+                {
+                    frequency = counter;
+                    mode = element;
+                }
+            }
+            MessageBox.Show($"{mode}");
+        }
+        private void sequentialSearch()
+        {
+            int val; // = Textbox
+
+            try
+            {
+                if (!String.IsNullOrEmpty(/* Textbox */))
+                    {
+                    for (int i = 0; i <= hoursArray.Length; i++)
+                    {
+                        if (hoursArray[i] == val)
+                        {
+                            MessageBox.Show($"Value found at index: {i}");
+                            break;
+                        }
+                    }
+                }
+                    
+                else
+                {
+                    MessageBox.Show("Please enter an int number");
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Please enter integer value \n + Exception: {e}");
+                throw;
+            }       
+        }
+
+        private void midExtreme()
+        {
+            int middleNo1 = 0;
+            int middleNo2 = 0;
+            double median;
+            int count = hoursArray.Length;
+            sort();
+
+            if (i % 2 == 0)
+            {
+                middleNo1 = hoursArray[(count / 2 - 1)];
+                middleNo2 = hoursArray[(count / 2)];
+                median = (middleNo1 + middleNo2) / 2;
+            }
+            else
+            {
+                median = hoursArray[(count / 2)];
+            }
+
+        }
     }
 }
