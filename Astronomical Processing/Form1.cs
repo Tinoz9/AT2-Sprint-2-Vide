@@ -24,11 +24,11 @@ namespace Astronomical_Processing
         {
             int min = 10;
             int max = 99;
-     
+
             Random randNum = new Random();
-            for(int i = 0; i < hoursArray.Length; i++)
+            for (int i = 0; i < hoursArray.Length; i++)
             {
-                if(i != null)
+                if (i != null)
                 {
                     hoursArray[i] = randNum.Next(min, max);
                     index++;
@@ -43,7 +43,7 @@ namespace Astronomical_Processing
             int check = 0;
             if (index < hoursArray.Length)
             {
-                if(int.TryParse(textBox.Text, out check))
+                if (int.TryParse(textBox.Text, out check))
                 {
                     hoursArray[index] = check;
                     index++;
@@ -59,7 +59,7 @@ namespace Astronomical_Processing
         // Method that allows user to add elements to the array 
         // Checks to see if there is an integer entered
         // Message box to display error if otherwise
-        
+
         private void display()
         {
             try
@@ -73,7 +73,7 @@ namespace Astronomical_Processing
             catch (Exception)
             {
                 MessageBox.Show("Array is full");
-            }               
+            }
         }
         // Method displays the array elements in the listbox 
         // Error handing to check if array is full 
@@ -84,7 +84,7 @@ namespace Astronomical_Processing
             int a = listBox.SelectedIndex;
             listBox.Items.RemoveAt(a);
             bool c = int.TryParse(textBox.Text, out b);
-            if(c == true)
+            if (c == true)
             {
                 listBox.Items.Insert(a, b);
             }
@@ -97,7 +97,7 @@ namespace Astronomical_Processing
         // Error handling to check if input is an integer
 
         private void buttonDelete_Click(object sender, EventArgs e)
-        {    
+        {
             hoursArray[listBox.SelectedIndex] = hoursArray[index - 1];
             index--;
             display();
@@ -107,7 +107,7 @@ namespace Astronomical_Processing
         private void buttonSort_Click(object sender, EventArgs e)
         {
             sort();
-            display();        
+            display();
         }
         // Sort button that uses the bubble sort algorithm
 
@@ -149,8 +149,8 @@ namespace Astronomical_Processing
                 {
                     MessageBox.Show("Target not found");
                     throw;
-                }                         
-            }           
+                }
+            }
         }
         // Binary search method to search for a user inputted value in the listbox (array)
         // Error handling to ensure the list is sorted before binary search
@@ -159,7 +159,7 @@ namespace Astronomical_Processing
         {
             for (int i = 0; i < index; i++)
             {
-                for (int k = 0; k < index -1; k++)
+                for (int k = 0; k < index - 1; k++)
                 {
                     if (hoursArray[k] > hoursArray[k + 1])
                     {
@@ -178,14 +178,14 @@ namespace Astronomical_Processing
         {
             listBox.Items.Clear();
             random();
-            display();     
+            display();
         }
         // Populate button to add the random integers in the array to the list 
-         
+
         private void Average()
         {
             int count = 0;
-            int total= 0;
+            int total = 0;
             double avg;
 
             try
@@ -199,12 +199,14 @@ namespace Astronomical_Processing
                 avg.ToString("0.##");
                 Console.WriteLine($"The Average is: {avg}");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 MessageBox.Show($"Could not calculate \n Exception: {e}");
                 throw;
-            }                  
+            }
         }
+        // Get average value from the listbox (hoursArray) and return to the average textbox
+
         private void Range()
         {
             int range;
@@ -220,9 +222,10 @@ namespace Astronomical_Processing
             {
                 MessageBox.Show($"Please populate array\n Exception: {e}");
                 throw;
-            }      
+            }
         }
-        
+        // Returns the range value to the user through the range listbox.
+
         private void Mode()
         {
             int element;
@@ -248,6 +251,8 @@ namespace Astronomical_Processing
             }
             MessageBox.Show($"{mode}");
         }
+        // Method to find the mode value from the array and display the most recurring number to display to user.
+
         private void sequentialSearch()
         {
             int val; // = Textbox
@@ -255,7 +260,7 @@ namespace Astronomical_Processing
             try
             {
                 if (!String.IsNullOrEmpty(/* Textbox */))
-                    {
+                {
                     for (int i = 0; i <= hoursArray.Length; i++)
                     {
                         if (hoursArray[i] == val)
@@ -265,7 +270,7 @@ namespace Astronomical_Processing
                         }
                     }
                 }
-                    
+
                 else
                 {
                     MessageBox.Show("Please enter an int number");
@@ -275,28 +280,31 @@ namespace Astronomical_Processing
             {
                 MessageBox.Show($"Please enter integer value \n + Exception: {e}");
                 throw;
-            }       
-        }
-
-        private void midExtreme()
-        {
-            int middleNo1 = 0;
-            int middleNo2 = 0;
-            double median;
-            int count = hoursArray.Length;
-            sort();
-
-            if (i % 2 == 0)
-            {
-                middleNo1 = hoursArray[(count / 2 - 1)];
-                middleNo2 = hoursArray[(count / 2)];
-                median = (middleNo1 + middleNo2) / 2;
-            }
-            else
-            {
-                median = hoursArray[(count / 2)];
             }
 
+            // Sequential search method to return a requested number to the user, algorithm using simple linear rules to run through the hoursarray until value is found
+
+            private void midExtreme()
+            {
+                int middleNo1 = 0;
+                int middleNo2 = 0;
+                double median;
+                int count = hoursArray.Length;
+                sort();
+
+                if (i % 2 == 0)
+                {
+                    middleNo1 = hoursArray[(count / 2 - 1)];
+                    middleNo2 = hoursArray[(count / 2)];
+                    median = (middleNo1 + middleNo2) / 2;
+                }
+                else
+                {
+                    median = hoursArray[(count / 2)];
+                }
+
+            }
+            // Mid- Extreme method finding mid range value from the hoursarray and return the value to user.
         }
     }
 }
