@@ -8,3 +8,13 @@ D:\Cert IV programming\C#\AT 2\At2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.
 D:\Cert IV programming\C#\AT 2\At2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.csproj.CoreCompileInputs.cache
 D:\Cert IV programming\C#\AT 2\At2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.exe
 D:\Cert IV programming\C#\AT 2\At2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.pdb
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.csprojAssemblyReference.cache
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2_Sprint_2.Form1.resources
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2_Sprint_2.Properties.Resources.resources
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.csproj.GenerateResource.cache
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.csproj.CoreCompileInputs.cache
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.exe
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\obj\Debug\At2 Sprint 2.pdb
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\bin\Debug\At2 Sprint 2.exe.config
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\bin\Debug\At2 Sprint 2.exe
+C:\Users\30019223\Source\Repos\AT2-Sprint-2-Vide\AT2 Sprint 2\At2 Sprint 2\bin\Debug\At2 Sprint 2.pdb
