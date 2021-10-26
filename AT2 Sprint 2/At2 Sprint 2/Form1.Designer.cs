@@ -136,6 +136,7 @@ namespace At2_Sprint_2
             this.sortBtn.TabIndex = 9;
             this.sortBtn.Text = "Sort";
             this.sortBtn.UseVisualStyleBackColor = true;
+            this.sortBtn.Click += new System.EventHandler(this.sortBtn_Click_1);
             // 
             // seqBtn
             // 
@@ -155,6 +156,7 @@ namespace At2_Sprint_2
             this.binBtn.TabIndex = 11;
             this.binBtn.Text = "Search Binary";
             this.binBtn.UseVisualStyleBackColor = true;
+            this.binBtn.Click += new System.EventHandler(this.binBtn_Click_1);
             // 
             // addBtn
             // 
@@ -164,6 +166,7 @@ namespace At2_Sprint_2
             this.addBtn.TabIndex = 12;
             this.addBtn.Text = "Add";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click_1);
             // 
             // editBtn
             // 
@@ -173,6 +176,7 @@ namespace At2_Sprint_2
             this.editBtn.TabIndex = 13;
             this.editBtn.Text = "Edit";
             this.editBtn.UseVisualStyleBackColor = true;
+            this.editBtn.Click += new System.EventHandler(this.editBtn_Click_1);
             // 
             // delBtn
             // 
@@ -182,6 +186,7 @@ namespace At2_Sprint_2
             this.delBtn.TabIndex = 14;
             this.delBtn.Text = "Delete";
             this.delBtn.UseVisualStyleBackColor = true;
+            this.delBtn.Click += new System.EventHandler(this.delBtn_Click_1);
             // 
             // textBox
             // 
@@ -198,6 +203,7 @@ namespace At2_Sprint_2
             this.popBtn.TabIndex = 16;
             this.popBtn.Text = "Populate";
             this.popBtn.UseVisualStyleBackColor = true;
+            this.popBtn.Click += new System.EventHandler(this.popBtn_Click_1);
             // 
             // Form1
             // 
@@ -249,4 +255,5 @@ namespace At2_Sprint_2
         private System.Windows.Forms.Button popBtn;
     }
 }
+
 
