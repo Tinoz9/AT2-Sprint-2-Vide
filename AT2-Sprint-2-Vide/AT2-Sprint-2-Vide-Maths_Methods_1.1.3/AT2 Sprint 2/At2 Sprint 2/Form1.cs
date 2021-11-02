@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace At2_Sprint_2
 {
@@ -65,16 +66,20 @@ namespace At2_Sprint_2
             double median;
             int count = hoursArray.Length;
             sort();
+            bool test = false;
 
             if (count % 2 == 0)
             {
                 middleNo1 = hoursArray[(count / 2 - 1)];
                 middleNo2 = hoursArray[(count / 2)];
                 median = (middleNo1 + middleNo2) / 2;
+                test = true;
+                Trace.TraceInformation($"Mid- Extreme val: {median} || Test: {test}");
             }
             else
             {
                 median = hoursArray[(count / 2)];
+                Trace.TraceInformation($"Mid- Extreme val: {median} || Test: {test}");
             }
             midExBox.Items.Add($"Mid-Extreme: {median}");
         }
@@ -92,16 +97,19 @@ namespace At2_Sprint_2
             {
                 for(int i = 0; i < index; i++)
                 {
-                    total += hoursArray[i];                  
+                    total += hoursArray[i];
+                    Trace.TraceInformation($"Average, Index: {hoursArray[i]}");
                 }
                 avg = total / index;
                 avg = Math.Round(avg, 2);
-                meanBox.Items.Add($"The Average is: {avg}");               
-                
+                meanBox.Items.Add($"The Average is: {avg}");
+                Trace.TraceInformation($"Average, val: {avg}");
+
             }
             catch (Exception e1)
             {
-                MessageBox.Show($"Could not calculate \n Exception: {e1}");              
+                MessageBox.Show($"Could not calculate \n Exception: {e1}");
+                Trace.TraceInformation($"Average, val: {avg} || Exception: {e}");
             }
         }
         // Algorithm to return the average from the dataset 
@@ -124,15 +132,18 @@ namespace At2_Sprint_2
                     if (element == hoursArray[j])
                     {
                         counter++;
+                        Trace.TraceInformation($"Mode, counter: {counter}");
                     }
                 }
                 if (counter >= frequency)
                 {
                     frequency = counter;
                     mode = element;
+                    Trace.TraceInformation($"Mode, val: {mode} || frequency: {frequency}");
                 }
             }
             modeBox.Items.Add($"Mode: {mode}");
+            Trace.TraceInformation($"Mode, val: {mode} || frequency: {frequency} || counter: {counter} || element: {element}");
         }
         // Algorithm to return mode value 
         // temp variable frequency set to 1 
@@ -153,14 +164,16 @@ namespace At2_Sprint_2
             try
             {
                 range = high - low;
-
+                Trace.TraceInformation($"Range: {range}");
             }
             catch (Exception e2)
             {
                 MessageBox.Show($"Please populate array\n Exception: {e2}");
                 throw;
+                Trace.TraceInformation($"Range, val: {range} || Exception: {e}");
             }
             rangeBox.Items.Add($"Range is: {range}");
+            Trace.TraceInformation($"Range, val: {range}");
         }
         // Algorithm to return the range value from dataset
         // Set high and low values of the array to low and high variables  
@@ -202,13 +215,17 @@ namespace At2_Sprint_2
             try
             {
                 int val = int.Parse(textBox.Text);
+                int i = 0;
+                bool test = false;
                 if (!String.IsNullOrEmpty(textBox.Text))
                 {
-                    for (int i = 0; i <= hoursArray.Length; i++)
+                    for (i = 0; i <= hoursArray.Length; i++)
                     {
                         if (hoursArray[i] == val)
                         {
+                            test = true;
                             MessageBox.Show($"Value found at index: {i}");
+                            Trace.TraceInformation($"Seq. Search, val: {i}");
                             break;
                         }
                     }
@@ -217,14 +234,14 @@ namespace At2_Sprint_2
                 else
                 {
                     MessageBox.Show("Number not found");
+                    Trace.TraceInformation($"Seq. Search, val: {i}, Test: {test}");
                 }
             }
             catch (Exception e3)
             {
-                MessageBox.Show($"Please enter integer value \n + Exception: {e3}");
+                MessageBox.Show($"Please enter integer value \n + Exception: {e3}");              
                 throw;
             }
-
             // Sequential search method to return a requested number to the user, algorithm using simple linear rules to run through the hoursarray until value is found
         }
 
