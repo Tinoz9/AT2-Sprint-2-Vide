@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Astronomical Processing, 
+// Team VIDE 
+// Tyler Hill, FLetcher Kent 
+
 namespace At2_Sprint_2
 {
     public partial class Form1 : Form
@@ -15,10 +19,22 @@ namespace At2_Sprint_2
         public Form1()
         {
             InitializeComponent();
+            Ttip.SetToolTip(this.binBtn, "search the data in the program via binaray search method");
+            Ttip.SetToolTip(this.addBtn, "Record a value in the program");
+            Ttip.SetToolTip(this.delBtn, "Delete a record from the program");
+            Ttip.SetToolTip(this.sortBtn, "Sort values in the program via bubble sort method");
+            Ttip.SetToolTip(this.editBtn, "Edit a value in the program");
+            Ttip.SetToolTip(this.midEBtn, "Display the Mid Extreme of the data");
+            Ttip.SetToolTip(this.meanBtn, "Display the Mean of the data");
+            Ttip.SetToolTip(this.modeBtn, "Display the Mode of the data");
+            Ttip.SetToolTip(this.rangeBtn, "Display the range of the data");
+            Ttip.SetToolTip(this.popBtn, "populate the data in the program with random values");
+            Ttip.SetToolTip(this.seqBtn, "search the data in the program via Sequential search method");
         }
         static int index = 0;
         int[] hoursArray = new int[24];
         bool sorted = false;
+        ToolTip Ttip = new ToolTip();
 
         private void random()
         {
@@ -131,7 +147,7 @@ namespace At2_Sprint_2
                 }
             }
             modeBox.Items.Add($"Mode: {mode}");
-            Trace.TraceInformation($"Mode, val: {mode} || frequency: {frequency}");
+            
         }
         // Algorithm to return mode value 
         // temp variable frequency set to 1 
@@ -157,8 +173,7 @@ namespace At2_Sprint_2
             catch (Exception e2)
             {
                 MessageBox.Show($"Please populate array\n Exception: {e2}");
-                throw;
-                Trace.TraceInformation($"Range, val: {range} || Exception: {e}");
+                throw;                
             }
             rangeBox.Items.Add($"Range is: {range}");
         }
@@ -223,10 +238,9 @@ namespace At2_Sprint_2
             {
                 MessageBox.Show($"Please enter integer value \n + Exception: {e3}");
                 throw;
-            }
-
-            // Sequential search method to return a requested number to the user, algorithm using simple linear rules to run through the hoursarray until value is found
+            }  
         }
+        // Sequential search method to return a requested number to the user, algorithm using simple linear rules to run through the hoursarray until value is found
 
         private void popBtn_Click_1(object sender, EventArgs e)
         {
@@ -259,10 +273,10 @@ namespace At2_Sprint_2
         {
             sort();
             display();
-
-            // Method to sort items in the listbox (Hoursarray) using bubble sort 
-            // Set sorted to true for error handling to ensure list is sorted before binary search   
+   
         }
+        // Method to sort items in the listbox (Hoursarray) using bubble sort 
+        // Set sorted to true for error handling to ensure list is sorted before binary search
 
         private void binBtn_Click_1(object sender, EventArgs e)
         {
@@ -304,9 +318,10 @@ namespace At2_Sprint_2
                     throw;
                 }
             }
-            // Binary search method to search for a user inputted value in the listbox (array)
-            // Error handling to ensure the list is sorted before binary search
+            
         }
+        // Binary search method to search for a user inputted value in the listbox (array)
+        // Error handling to ensure the list is sorted before binary search
 
         private void addBtn_Click_1(object sender, EventArgs e)
         {
@@ -355,8 +370,40 @@ namespace At2_Sprint_2
             display();
         }
         // Method to delete selected item from the listbox (array)  
+
+        private void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+        // Event method that only allows numbers in the textbox
+
+        
+        private void listBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            //StatusMessage.Text = "";
+            if (listBox.SelectedIndex != -1)
+            {
+                string dataItem = listBox.SelectedItem.ToString();
+                int dataItemIndex = listBox.FindString(dataItem);
+                textBox.Text = hoursArray[dataItemIndex].ToString();
+                textBox.Focus();
+            }
+            else
+            {
+                MessageBox.Show("ERROR: Please select from the List Box");
+            }
+        }
+
+
+
+
     }
     
+    
+    
+    
+
+
 }
 
 

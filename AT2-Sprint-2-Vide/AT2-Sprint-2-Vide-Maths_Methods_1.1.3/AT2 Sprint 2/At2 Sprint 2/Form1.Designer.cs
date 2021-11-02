@@ -65,6 +65,7 @@ namespace At2_Sprint_2
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(131, 329);
             this.listBox.TabIndex = 1;
+            this.listBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBox_MouseClick);
             // 
             // midExBox
             // 
@@ -194,6 +195,7 @@ namespace At2_Sprint_2
             this.textBox.Name = "textBox";
             this.textBox.Size = new System.Drawing.Size(131, 20);
             this.textBox.TabIndex = 15;
+            this.textBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_KeyPress);
             // 
             // popBtn
             // 
