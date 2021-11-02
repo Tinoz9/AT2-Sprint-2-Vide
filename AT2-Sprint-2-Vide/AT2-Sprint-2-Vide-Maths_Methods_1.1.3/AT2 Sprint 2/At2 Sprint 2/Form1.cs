@@ -78,6 +78,10 @@ namespace At2_Sprint_2
             }
             midExBox.Items.Add($"Mid-Extreme: {median}");
         }
+        // Algorithm to calculate mid-extreme 
+        // Count is equal to the length of the array 
+        // If the remainder is 0 add the two middle elements and divide by two set that value as median
+        // Else divide by 2 and grab the middle element set as median
 
         private void meanBtn_Click(object sender, EventArgs e)
         {           
@@ -100,7 +104,10 @@ namespace At2_Sprint_2
                 MessageBox.Show($"Could not calculate \n Exception: {e1}");              
             }
         }
-    
+        // Algorithm to return the average from the dataset 
+        // Loop through the array for each element in the array. 
+        // Adds the current element to the total and Increment the count each time happens.
+        // Average is equal to the total divided by the count
 
         private void modeBtn_Click(object sender, EventArgs e)
         {
@@ -127,6 +134,15 @@ namespace At2_Sprint_2
             }
             modeBox.Items.Add($"Mode: {mode}");
         }
+        // Algorithm to return mode value 
+        // temp variable frequency set to 1 
+        // Loop through the hoursArray’s lenth and set value of the current element(i) to temp variable “element”.
+        // Counter is set back to 0 
+        // Another for loop current value set to(j) is created
+        // If j equals I then increment the counter by 1. 
+        // If the counter is greater the frequency (default 1) frequency is set to counter and the mode equals the element (i). 
+        // These steps repeat each other until every part of the array has been checked. 
+
 
         private void rangeBtn_Click(object sender, EventArgs e)
         {
@@ -146,6 +162,10 @@ namespace At2_Sprint_2
             }
             rangeBox.Items.Add($"Range is: {range}");
         }
+        // Algorithm to return the range value from dataset
+        // Set high and low values of the array to low and high variables  
+        // Take high- low and set that value to range  
+        // Parse the range value to display in the appropriate textbox
 
         private int getMax()
         {
@@ -159,6 +179,8 @@ namespace At2_Sprint_2
             }
             return max;
         }
+        // Method to iterate through all the numbers in the array to find and set the max value 
+
         private int getMin()
         {
             int min = 0;
@@ -173,6 +195,8 @@ namespace At2_Sprint_2
             }
             return min;
         }
+        // Method to iterate through all the numbers in the array to find and set the min value 
+
         private void seqBtn_Click(object sender, EventArgs e)
         {        
             try
