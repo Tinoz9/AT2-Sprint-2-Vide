@@ -43,9 +43,7 @@ namespace At2_Sprint_2
             for (int i = 0; i < index; i++)
             {
                 listBox.Items.Add(hoursArray[i]);
-            }
-
-            Console.WriteLine("Display Working");
+            }           
             
         }
         // Method displays the array elements in the listbox 
@@ -133,6 +131,7 @@ namespace At2_Sprint_2
                 }
             }
             modeBox.Items.Add($"Mode: {mode}");
+            Trace.TraceInformation($"Mode, val: {mode} || frequency: {frequency}");
         }
         // Algorithm to return mode value 
         // temp variable frequency set to 1 
@@ -159,6 +158,7 @@ namespace At2_Sprint_2
             {
                 MessageBox.Show($"Please populate array\n Exception: {e2}");
                 throw;
+                Trace.TraceInformation($"Range, val: {range} || Exception: {e}");
             }
             rangeBox.Items.Add($"Range is: {range}");
         }
